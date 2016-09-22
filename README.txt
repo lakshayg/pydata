@@ -28,9 +28,14 @@ $ git clone https://github.com/lakshayg/pydata
 
 Now obtain the required datasets from the following link:
 
-https://www.dropbox.com/sh/kicd5kwdv8n7kyi/AABqhGBnWHuu3n9EgjLfyOnQa?dl=1
+https://www.dropbox.com/sh/r5gn4z6m5871qnu/AAA_YwqQQbxdG5S4U6MG_SwTa?dl=1
 
-Place the downloaded folder so that the directory structure looks
+This is a zip archive named data.zip. Extract it as follows:
+(Note: If unzipping using the GUI, you may encounter errors)
+
+$ unzip data.zip -d data
+
+Place the data folder so that the directory structure looks
 as follows:
 
 pydata
