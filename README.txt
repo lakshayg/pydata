@@ -22,49 +22,10 @@ following datasets are available:
 Installation
 ------------
 
-Run the following command to download and install the
-package. The script downloads datasets (~196MB) so make
-sure you have a stable internet connection.
+Run the following command to download and install the package.
+The script downloads datasets (~196MB) ans installs python package
 
 $ bash <(curl -s https://raw.githubusercontent.com/lakshayg/pydata/master/easy_setup.sh)
-
-If the above method does not work for some reason, here
-are the detailed instructions for downloading and installing
-To install the package, first clone the git repository using
-
-$ git clone https://github.com/lakshayg/pydata
-
-Now obtain the required datasets from the following link:
-
-https://www.dropbox.com/sh/r5gn4z6m5871qnu/AAA_YwqQQbxdG5S4U6MG_SwTa?dl=1
-
-This is a zip archive named data.zip. Extract it as follows:
-(Note: If unzipping using the GUI, you may encounter errors)
-
-$ unzip data.zip -d data
-
-Place the data folder so that the directory structure looks
-as follows:
-
-pydata
-|__ MANIFEST.in
-|__ README.txt
-|__ setup.py
-|__ pydata
-    |__ data          <<== this folder contains datasets
-    :   |__ cifar10
-    :   :   |__ ...
-    :   |__ usps
-    :   :   |__ ...
-    :   |__ banana_data.csv
-    :   |__ ...
-    |__ datasets.py
-    |__ __init__.py
-
-
-The package is then installed using
-
-$ python setup.py install
 
 Usage
 -----
