@@ -22,6 +22,14 @@ following datasets are available:
 Installation
 ------------
 
+Run the following command to download and install the
+package. The script downloads datasets (~196MB) so make
+sure you have a stable internet connection.
+
+$ bash <(curl -s https://raw.githubusercontent.com/lakshayg/pydata/master/easy_setup.sh)
+
+If the above method does not work for some reason, here
+are the detailed instructions for downloading and installing
 To install the package, first clone the git repository using
 
 $ git clone https://github.com/lakshayg/pydata
