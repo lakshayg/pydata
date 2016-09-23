@@ -100,7 +100,7 @@ def load_banana():
     module_path = dirname(__file__)
     banana = pd.read_csv(join(module_path, 'data', 'banana_data.csv'), header=None)
     X = banana[[1,2]].as_matrix()
-    y = banana[[0]].as_array()
+    y = banana[[0]].as_matrix()
     meta = {
             'feature_names': ['x1', 'x2'],
             'date_acquired': '22-Sep-2016',
