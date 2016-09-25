@@ -5,7 +5,8 @@ from os.path import dirname
 
 def load_mnist(split='train'):
     import cPickle
-    f = open('data/mnist.pkl')
+    module_path = dirname(__file__)
+    f = open(join(module_path, 'data', 'mnist.pkl'))
     train, val, test = cPickle.load(f)
     f.close()
     meta = {
