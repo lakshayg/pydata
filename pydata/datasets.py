@@ -15,11 +15,11 @@ def load_mnist(split='train'):
         'url': 'http://deeplearning.net/tutorial/gettingstarted.html'
     }
     if (split == 'test'):
-        return test[0], test[1], meta
+        return np.float32(test[0]), np.int8(test[1]), meta
     elif (split == 'val'):
-        return val[0], val[1], meta
+        return np.float32(val[0]), np.int8(val[1]), meta
     else: # return training set by default
-        return train[0], train[1], meta
+        return np.float32(train[0]), np.int8(train[1]), meta
 
 def load_usps(split='train'):
     module_path = dirname(__file__)
@@ -41,7 +41,7 @@ def load_usps(split='train'):
         digits2 = pd.read_csv(join(module_path, 'data', 'usps', 'usps_test.csv'), header=None)
         X = np.vstack((digits1[range(1,257)].as_matrix(), digits2[range(1,257)].as_matrix()))
         y = np.vstack((digits1[[0]].as_matrix(), digits2[[0]].as_matrix()))
-    return X, y, meta
+    return np.float32(X), np.int8(y), meta
 
 def load_forest_cover():
     module_path = dirname(__file__)
@@ -61,7 +61,7 @@ def load_forest_cover():
     }
     X = data[range(54)].as_matrix()
     y = data[[54]].as_matrix()-1 # output lies in {0,1,2,3,4,5,6}
-    return X, y, meta
+    return np.float32(X), np.int8(y), meta
 
 def load_letters():
     module_path = dirname(__file__)
@@ -77,7 +77,7 @@ def load_letters():
     }
     X = letters[range(1,17)].as_matrix()
     y = letters[[0]].applymap(lambda x: ord(x)-ord('A')).as_matrix()
-    return X, y, meta
+    return np.float32(X), np.int8(y), meta
 
 def load_magic04():
     module_path = dirname(__file__)
@@ -95,7 +95,7 @@ def load_magic04():
         if x == 'g': return 0
         else: return 1
     y = magic[[10]].applymap(tf).as_matrix()
-    return X, y, meta
+    return np.float32(X), np.int8(y), meta
 
 def load_banana():
     module_path = dirname(__file__)
@@ -107,7 +107,7 @@ def load_banana():
             'date_acquired': '22-Sep-2016',
             'url': 'http://mldata.org/repository/data/viewslug/banana-ida/'
     }
-    return X, y, meta
+    return np.float32(X), np.int8(y), meta
 
 def load_cifar10(split='train'):
     """Loads the cifar10 dataset. Test/train splits can be chosen
@@ -136,7 +136,7 @@ def load_cifar10(split='train'):
     if (split == 'test'): # test
         f = unpickle(join(module_path, 'data', 'cifar10', 'test_batch'))
         meta['filenames'] = f['filenames']
-        return f['data'], f['labels'], meta
+        return np.float32(f['data']), np.int8(f['labels']), meta
     else:  # train / all
         for i in range(1,6): # train
             f = unpickle(join(module_path, 'data', 'cifar10', 'data_batch_{}'.format(i)))
@@ -154,5 +154,5 @@ def load_cifar10(split='train'):
             labels = np.hstack((labels,f['labels']))
             filenames += f['filenames']
         meta['filenames'] = filenames
-        return data, labels, meta
+        return np.float32(data), np.int8(labels), meta
 
