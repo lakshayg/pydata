@@ -14,13 +14,13 @@ def norm_zscore(X):
 def shuffle(X, y):
     indices = np.random.permutation(X.shape[0])
     XX = X[indices,:]
-    yy = y[indices,:]
+    yy = y[indices]
     return XX, yy
 
 def random_sample(X, y, n_samples=1):
     indices = np.random.permutation(X.shape[0])
     indices = indices[:n_samples]
     XX = X[indices,:]
-    yy = y[indices,:]
+    yy = y[indices]
     return XX, yy
 
