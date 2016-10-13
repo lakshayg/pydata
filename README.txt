@@ -30,6 +30,8 @@ $ bash <(curl -s https://raw.githubusercontent.com/lakshayg/pydata/master/easy_s
 Usage
 -----
 
+API documentation is available at: https://lakshayg.github.io/pydata
+
 Here is a short example demonstrating the use of pydata
 
 >>> import pydata

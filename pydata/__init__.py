@@ -1,3 +1,9 @@
+"""
+PyData is a minimal python module to work with classification datasets.
+It provides publicly available datasets in a ready to use manner within
+python. It also contains utility functions for common dataset operations.
+The source code is available at <https://github.com/lakshayg/pydata>.
+"""
 from datasets import load_banana
 from datasets import load_cifar10
 from datasets import load_magic04
