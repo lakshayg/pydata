@@ -8,4 +8,6 @@ from datasets import load_mnist
 
 from utils import norm_minmax
 from utils import norm_zscore
+from utils import shuffle
+from utils import random_sample
 
