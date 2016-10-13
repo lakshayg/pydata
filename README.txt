@@ -23,7 +23,7 @@ Installation
 ------------
 
 Run the following command to download and install the package.
-The script downloads datasets (~196MB) ans installs python package
+The script downloads datasets (~196MB) and installs python package
 
 $ bash <(curl -s https://raw.githubusercontent.com/lakshayg/pydata/master/easy_setup.sh)
 

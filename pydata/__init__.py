@@ -6,3 +6,6 @@ from datasets import load_usps
 from datasets import load_forest_cover
 from datasets import load_mnist
 
+from utils import norm_minmax
+from utils import norm_zscore
+
