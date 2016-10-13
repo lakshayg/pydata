@@ -1,3 +1,25 @@
+"""
+This submodule contains all the functions for loading datasets.
+The datasets currently available are:
+
+* Banana: <http://mldata.org/repository/data/viewslug/banana-ida/>
+* CIFAR10: <https://www.cs.toronto.edu/~kriz/cifar.html>
+* MAGIC04: <https://archive.ics.uci.edu/ml/datasets/MAGIC+Gamma+Telescope>
+* Letter Recognition: <https://archive.ics.uci.edu/ml/datasets/Letter+Recognition>
+* USPS Digits: <http://www-i6.informatik.rwth-aachen.de/~keysers/usps.html>
+* Forest Cover Type: <https://archive.ics.uci.edu/ml/datasets/Covertype>
+* MNIST: <http://yann.lecun.com/exdb/mnist/>
+
+All the functions in this module follow the same syntax and return
+three parameters: `X`, `y`, `meta`. `X` contains the actual data,
+`y` has the data labels for classification tasks and `meta` contains
+metadata about the dataset like the feature labels.
+
+All function require no input arguments but some functions allow
+for an optional `split` argument which specifies the subset of
+data to load. Valid options are: "train", "test" and "all"
+"""
+
 import pandas as pd
 import numpy as np
 from os.path import join
@@ -110,13 +132,6 @@ def load_banana():
     return np.float32(X), np.int8(y), meta
 
 def load_cifar10(split='train'):
-    """Loads the cifar10 dataset. Test/train splits can be chosen
-       using the parameter split.
-       'all'   => load complete dataset
-       'test'  => load test split
-       'train' => load train split
-    """
-
     def unpickle(file):
         import cPickle
         fo = open(file, 'rb')
